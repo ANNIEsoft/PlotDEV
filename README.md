@@ -5,7 +5,7 @@ This is a package is intended for making plots for the online DAQ system. It con
 Please note: That all plotting scripts will be run periodically on the DAQ (e.g. every X number of Card reads/events). This frequency will be dynamically changeable but will also be based on how long each takes to run. Remember data can come in at 0.5Hz so if your plotting class takes a long time to execute it will have to be run less frequently. 
 
 
-#Building
+# Building
 
 To build the PlotTest executable just do the following:
 
@@ -30,7 +30,7 @@ Creating your own plot or collection of plots is simple you just need to follow 
 
 Descriptions of these functions are below:
 
-#Initialise
+# Initialise
  
 bool Initialise(Store* variables, std::map<int, std::map<int,PMT> >* PMInfo, std::vector<std::string>* SlackErrors);
 
@@ -54,7 +54,7 @@ e.g.	  (*PMTInfo)[CardID][Channel].gx
 
    SlackErrors.push_back("MYPlot: error message text");
 
-#Execute
+# Execute
 
   bool Execute(std::vector<CardData*> *data);
   
@@ -65,7 +65,7 @@ Aguments:
 1) data is a vector of CardData pointers. This is an object which contains the raw information form the cards when read out. note it is in ADC units not pedistal subtracted and the ADC data is stacked back to back by channel and then interleaved in each channel in the following patter 13245768...
 A full list of vaiables can be found in include/CardData.h
 
-#Finalise 
+# Finalise 
 
   bool Finalise();
 
@@ -73,7 +73,7 @@ the Finalise function should be used to clean up all data delete histograms canv
 
 
 
-#Testing
+# Testing
 
 the PlotTest executable provides a test stand for your plotting class. It can provide a set of simulated card outputs and test input arguments. If you need specific functionality or data to test your plots feel free to expand what is currently there. currently the entire program is in src/main.cpp
 
