@@ -49,7 +49,7 @@ bool ExampleEventDisplay::Execute(std::vector<CardData*> *data){
       
       std::stringstream tmp;
       
-      tmp<<outpath<<"EventDisplay.jpg";
+      tmp<<outpath<<"EventDisplay.png";
       canvas->SaveAs(tmp.str().c_str());
       
     }
